@@ -3,6 +3,7 @@ package com.vet.backend.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vet.backend.enums.AnimalType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,6 +13,8 @@ public class Adoption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(max = 50, message = "Name cannot be longer than 50 characters")
+    @Column(length = 50)  // This sets the column length in the database
     private String name;
     @ManyToOne
     @JoinColumn(name = "pet_id", nullable = false)
