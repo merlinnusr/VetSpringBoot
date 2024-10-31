@@ -1,5 +1,6 @@
 package com.vet.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -22,4 +23,6 @@ public class User {
     @Size(min = 10, max = 10, message = "Phone number must be exactly 10 digits")
     @Column(length = 10)  // This sets the column length in the database
     private String phone;
+    @JsonIgnore
+    private String password;
 }

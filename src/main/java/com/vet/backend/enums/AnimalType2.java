@@ -1,6 +1,6 @@
 package com.vet.backend.enums;
 
-public enum AnimalType {
+public enum AnimalType2 {
     MAMMAL,
     BIRD,
     REPTILE,

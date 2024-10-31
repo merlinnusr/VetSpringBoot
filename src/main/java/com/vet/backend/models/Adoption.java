@@ -1,7 +1,6 @@
 package com.vet.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.vet.backend.enums.AnimalType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Data;

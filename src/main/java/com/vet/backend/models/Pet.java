@@ -20,7 +20,7 @@ public class Pet {
     @Size(max = 50, message = "Name cannot be longer than 50 characters")
     @Column(length = 50)  // This sets the column length in the database
     private String name;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "animal_type_id", nullable = false)
     private AnimalType animalTypeId;
     @Min(value = 0, message = "La edad no puede ser menor a 0 años.")
