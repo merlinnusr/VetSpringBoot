@@ -13,4 +13,5 @@ public class AdoptionService {
     public Adoption store(Adoption adoption){
         return this.adoptionRepository.save(adoption);
     }
+
 }

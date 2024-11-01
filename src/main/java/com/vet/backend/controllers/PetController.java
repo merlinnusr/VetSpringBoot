@@ -3,6 +3,7 @@ package com.vet.backend.controllers;
 import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
 import com.vet.backend.repositories.PetRepository;
+import com.vet.backend.services.AnimalTypeService;
 import com.vet.backend.services.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,16 @@ import java.util.List;
 public class PetController {
     @Autowired
     private PetService petService;
+    @Autowired
+    private AnimalTypeService animalTypeService;
     @PostMapping("")
-    public Pet create(Pet pet){
+    public Pet create(@RequestBody PetDto petDto ){
+        var animalType = this.animalTypeService.findById(petDto.getAnimalTypeId());
+        var pet = new Pet();
+        pet.setName(petDto.getName());
+        pet.setAvailability(petDto.getAvailability());
+        pet.setAge(petDto.getAge());
+        pet.setAnimalType(animalType);
         return petService.store(pet);
     }
     @GetMapping("")

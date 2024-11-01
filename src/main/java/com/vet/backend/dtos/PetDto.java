@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class PetDto {
     private String name;
-    private AnimalType animalTypeId;
+    private Long animalTypeId;
     private Integer age;
     private Boolean availability;
 }

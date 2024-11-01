@@ -14,4 +14,7 @@ public class AnimalTypeService {
     public AnimalType find(Long id){
         return this.animalTypeRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe el tipo de animal"));
     }
+    public AnimalType findById(Long id){
+        return this.animalTypeRepository.findById(id).orElseThrow(() ->  new RuntimeException("Adopcion no encontrada"));
+    }
 }
