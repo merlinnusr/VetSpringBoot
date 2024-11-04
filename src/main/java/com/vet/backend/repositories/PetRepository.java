@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface PetRepository extends  JpaRepository<Pet, Long> {
+public interface PetRepository extends JpaRepository<Pet, Long> {
     Optional<Pet> findByNameAndAge(String name, int age);
 }

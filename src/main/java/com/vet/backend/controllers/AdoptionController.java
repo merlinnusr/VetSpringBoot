@@ -21,32 +21,32 @@ import java.time.LocalDate;
 @RequestMapping("/api/adopciones")
 public class AdoptionController {
 
-    @Autowired
-    private PetService petService;
+    //@Autowired
+    //private PetService petService;
     @Autowired
     private AdoptionService adoptionService;
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private AnimalTypeService animalTypeService;
+    //@Autowired
+    //private UserService userService;
+    //@Autowired
+    //private AnimalTypeService animalTypeService;
     @PostMapping
     public Adoption create(@RequestBody AdoptionDto adoptionDto){
         System.out.println(adoptionDto);
-        var user = userService.find(adoptionDto.getUserId());
-        var animalType = animalTypeService.find(adoptionDto.getAnimalTypeId());
-        Pet pet = new Pet();
-        pet.setAge(adoptionDto.getAge());
-        pet.setName(adoptionDto.getName());
-        pet.setAnimalType(animalType);
-        pet.setAvailability(true);
-        
-        Adoption adoption = new Adoption();
-        adoption.setName(adoptionDto.getName());
-        adoption.setUser(user);
-        adoption.setAdoptionDate(LocalDate.now());
-        adoption.setPet(pet);
-        log.warn("Warning");
-        this.petService.store(pet);
-        return this.adoptionService.store(adoption);
+//        var user = userService.find(adoptionDto.getUserId());
+//        var animalType = animalTypeService.find(adoptionDto.getAnimalTypeId());
+//        Pet pet = new Pet();
+//        pet.setAge(adoptionDto.getAge());
+//        pet.setName(adoptionDto.getName());
+//        pet.setAnimalType(animalType);
+//        pet.setAvailability(true);
+//
+//        Adoption adoption = new Adoption();
+//        adoption.setName(adoptionDto.getName());
+//        adoption.setUser(user);
+//        adoption.setAdoptionDate(LocalDate.now());
+//        adoption.setPet(pet);
+//        log.warn("Warning");
+//        this.petService.store(pet);
+        return this.adoptionService.store(adoptionDto);
     }
 }

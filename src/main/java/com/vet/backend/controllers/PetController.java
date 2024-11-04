@@ -19,13 +19,13 @@ public class PetController {
     private AnimalTypeService animalTypeService;
     @PostMapping("")
     public Pet create(@RequestBody PetDto petDto ){
-        var animalType = this.animalTypeService.findById(petDto.getAnimalTypeId());
-        var pet = new Pet();
-        pet.setName(petDto.getName());
-        pet.setAvailability(petDto.getAvailability());
-        pet.setAge(petDto.getAge());
-        pet.setAnimalType(animalType);
-        return petService.store(pet);
+//        var animalType = this.animalTypeService.find(petDto.getAnimalTypeId());
+//        var pet = new Pet();
+//        pet.setName(petDto.getName());
+//        pet.setAvailability(petDto.getAvailability());
+//        pet.setAge(petDto.getAge());
+//        pet.setAnimalType(animalType);
+        return petService.store(petDto);
     }
     @GetMapping("")
     public List<Pet> index(){
