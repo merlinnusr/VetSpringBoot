@@ -2,9 +2,8 @@ package com.vet.backend.controllers;
 
 import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
-import com.vet.backend.repositories.PetRepository;
-import com.vet.backend.services.AnimalTypeService;
-import com.vet.backend.services.PetService;
+import com.vet.backend.services.imp.AnimalTypeService;
+import com.vet.backend.services.imp.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

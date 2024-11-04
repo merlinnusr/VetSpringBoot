@@ -1,14 +1,15 @@
-package com.vet.backend.services;
+package com.vet.backend.services.imp;
 
 import com.vet.backend.dtos.UserDto;
 import com.vet.backend.models.User;
 import com.vet.backend.repositories.UserRepository;
+import com.vet.backend.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserService implements IUserService {
     @Autowired
     public UserRepository userRepository;
     public User find(Long id){

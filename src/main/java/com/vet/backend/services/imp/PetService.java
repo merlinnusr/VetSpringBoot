@@ -1,18 +1,18 @@
-package com.vet.backend.services;
+package com.vet.backend.services.imp;
 
 import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
 import com.vet.backend.repositories.AdoptionRepository;
 import com.vet.backend.repositories.AnimalTypeRepository;
 import com.vet.backend.repositories.PetRepository;
+import com.vet.backend.services.IPetService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PetService {
+public class PetService implements IPetService {
     @Autowired
     private PetRepository petRepository;
     @Autowired
