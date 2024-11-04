@@ -29,25 +29,22 @@ public class Seeder {
                 user1.setPassword(passwordEncoder.encode("password"));
                 userRepository.save(user1);
 
-                var animalType = new com.vet.backend.models.AnimalType();
-                animalType.setName("Mamal");
-                animalTypeRepository.save(animalType);
-                var animalType2 = new com.vet.backend.models.AnimalType();
-                animalType.setName("Bird");
-                animalTypeRepository.save(animalType2);
-                var animalType3 = new com.vet.backend.models.AnimalType();
-                animalType.setName("Reptile");
-                animalTypeRepository.save(animalType3);
-                var animalType4 = new com.vet.backend.models.AnimalType();
-                animalType.setName("Fish");
-                animalTypeRepository.save(animalType4);
-                var animalType5 = new com.vet.backend.models.AnimalType();
-                animalType.setName("AMPHIBIAN");
-                animalTypeRepository.save(animalType5);
+                createAndSaveAnimalType("Mammal", animalTypeRepository);
+                createAndSaveAnimalType("Bird", animalTypeRepository);
+                createAndSaveAnimalType("Reptile", animalTypeRepository);
+                createAndSaveAnimalType("Fish", animalTypeRepository);
+                createAndSaveAnimalType("Amphibian", animalTypeRepository);
+
                 System.out.println("Database seeded successfully!");
             } else {
                 System.out.println("Database already contains data. Seeding skipped.");
             }
         };
+    }
+
+    private void createAndSaveAnimalType(String name, AnimalTypeRepository animalTypeRepository) {
+        var animalType = new com.vet.backend.models.AnimalType();
+        animalType.setName(name);
+        animalTypeRepository.save(animalType);
     }
 }

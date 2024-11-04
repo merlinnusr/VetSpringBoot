@@ -17,7 +17,7 @@ public class PetController {
     private PetService petService;
     @Autowired
     private AnimalTypeService animalTypeService;
-    @PostMapping("")
+    @PostMapping("/crear")
     public Pet create(@RequestBody PetDto petDto ){
 //        var animalType = this.animalTypeService.find(petDto.getAnimalTypeId());
 //        var pet = new Pet();
