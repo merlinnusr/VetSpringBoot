@@ -14,5 +14,5 @@ public class AdoptionDto {
     private Long animalTypeId;
     private Integer age;
     private Long userId;
-
+    private Long petId;
 }

@@ -29,7 +29,7 @@ public class AdoptionController {
     //private UserService userService;
     //@Autowired
     //private AnimalTypeService animalTypeService;
-    @PostMapping
+    @PostMapping("/crear")
     public Adoption create(@RequestBody AdoptionDto adoptionDto){
         System.out.println(adoptionDto);
 //        var user = userService.find(adoptionDto.getUserId());

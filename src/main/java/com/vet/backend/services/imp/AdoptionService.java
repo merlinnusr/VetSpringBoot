@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Slf4j
 @Service
 public class AdoptionService implements IAdoptionService {
@@ -25,13 +27,7 @@ public class AdoptionService implements IAdoptionService {
 
     public Adoption store(AdoptionDto adoptionDto){
         var user = userService.find(adoptionDto.getUserId());
-        var animalType = animalTypeService.find(adoptionDto.getAnimalTypeId());
-        PetDto petDto = new PetDto();
-        petDto.setAge(adoptionDto.getAge());
-        petDto.setName(adoptionDto.getName());
-        petDto.setAnimalTypeId(animalType.getId());
-        petDto.setAvailability(true);
-        Pet pet = this.petService.store(petDto);
+        Pet pet = this.petService.getPetById(adoptionDto.getPetId());
 
         Adoption adoption = new Adoption();
         adoption.setName(adoptionDto.getName());
@@ -42,6 +38,37 @@ public class AdoptionService implements IAdoptionService {
         log.warn("Warning");
         // this.petService.store(pet);
         return this.adoptionRepository.save(adoption);
+    }
+
+    @Override
+    public void deleteAdoption(Long id) {
+        this.findAdoptionById(id);
+        this.adoptionRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Adoption> getAdoptions() {
+        return this.adoptionRepository.findAll();
+    }
+
+    @Override
+    public Adoption findAdoptionById(Long id) {
+        return this.adoptionRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Adoption updateAdoption(Long id, AdoptionDto adoptionDto) {
+       Adoption adoption = this.findAdoptionById(id);
+
+       var user = userService.find(adoptionDto.getUserId());
+       Pet pet = this.petService.getPetById(adoptionDto.getPetId());
+
+       adoption.setName(adoptionDto.getName());
+       adoption.setUser(user);
+       //adoption.setAdoptionDate(LocalDate.now());
+       adoption.setPet(pet);
+
+       return adoptionRepository.save(adoption);
     }
 
 }

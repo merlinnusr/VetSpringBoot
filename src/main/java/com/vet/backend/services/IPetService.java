@@ -10,6 +10,8 @@ public interface IPetService {
     public Pet store(PetDto petDto);
     //update pet
     public Pet update(PetDto petDto, Long id);
+    //delete pet
+    public void delete(Long id);
     //get all pets
     public List<Pet> all();
     //find pet by id
