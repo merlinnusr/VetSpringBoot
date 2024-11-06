@@ -7,6 +7,8 @@ import com.vet.backend.services.AdoptionService;
 import com.vet.backend.services.AnimalTypeService;
 import com.vet.backend.services.PetService;
 import com.vet.backend.services.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
-
+import java.util.logging.Logger;
+@Slf4j
 @RestController
 @RequestMapping("/api/adopciones")
 public class AdoptionController {
+
     @Autowired
     private PetService petService;
     @Autowired
@@ -34,7 +38,7 @@ public class AdoptionController {
         Pet pet = new Pet();
         pet.setAge(adoptionDto.getAge());
         pet.setName(adoptionDto.getName());
-        pet.setAnimalTypeId(animalType);
+        pet.setAnimalType(animalType);
         pet.setAvailability(true);
         
         Adoption adoption = new Adoption();
@@ -42,7 +46,7 @@ public class AdoptionController {
         adoption.setUser(user);
         adoption.setAdoptionDate(LocalDate.now());
         adoption.setPet(pet);
-
+        log.warn("Warning");
         this.petService.store(pet);
         return this.adoptionService.store(adoption);
     }

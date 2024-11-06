@@ -11,7 +11,7 @@ public class PetDto {
     private String name;
     @NotNull(message = "Animal type ID is required")
     @Positive(message = "Animal type ID should be a positive number")
-    private AnimalType animalTypeId;
+    private Long animalTypeId;
     @NotNull(message = "Age is required")
     @Min(value = 0, message = "Age should be at least 0")
     @Max(value = 99, message = "Age should not exceed 50")
