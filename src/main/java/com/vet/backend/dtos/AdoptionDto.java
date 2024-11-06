@@ -1,7 +1,5 @@
 package com.vet.backend.dtos;
 
-import com.vet.backend.models.AnimalType;
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.Getter;
