@@ -25,4 +25,7 @@ public class User {
     private String phone;
     @JsonIgnore
     private String password;
+    @OneToOne(cascade = CascadeType.ALL,
+                fetch = FetchType.EAGER)
+    private Role role;
 }

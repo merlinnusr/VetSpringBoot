@@ -1,6 +1,7 @@
 package com.vet.backend.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.vet.backend.models.Role;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -25,4 +26,5 @@ public class UserDto {
     @NotBlank(message = "Password is required")
     @Size(min = 8, max = 20, message = "Password should be between 8 and 20 characters")
     private String password;
+    private Role role;
 }
