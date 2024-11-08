@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService implements IUserService {
     @Autowired
@@ -15,11 +17,30 @@ public class UserService implements IUserService {
     public User find(Long id){
         return this.userRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe ese usuario"));
     }
+
+    @Override
+    public void deleteUser(Long id) {
+
+    }
+
+    @Override
+    public User updateUser(UserDto userDto) {
+        return null;
+    }
+
+
+    @Override
+    public List<User> findAllUsers() {
+        return this.userRepository.findAll();
+    }
+
     public User save(UserDto userDto){
+
         User user = new User();
         user.setName(userDto.getName());
         user.setPhone(userDto.getPhone());
         user.setEmail(userDto.getEmail());
+        user.setRole(userDto.getRole());
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         return user;
