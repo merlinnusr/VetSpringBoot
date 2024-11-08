@@ -1,6 +1,7 @@
 package com.vet.backend.services;
 
 import com.vet.backend.dtos.PetDto;
+import com.vet.backend.exceptions.NotFoundException;
 import com.vet.backend.models.Pet;
 import com.vet.backend.repositories.AdoptionRepository;
 import com.vet.backend.repositories.AnimalTypeRepository;
@@ -23,8 +24,8 @@ public class PetService {
         return this.petRepository.save(pet);
     }
     public Pet update(PetDto petDto, Long id){
-        var pet = this.petRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro la mascota con el id : " + id));
-        var animalType = this.animalTypeRepository.findById(pet.getAnimalType().getId()).orElseThrow(() -> new RuntimeException("No se encontro la mascota con el id : " + id));
+        var pet = this.petRepository.findById(id).orElseThrow(() -> new NotFoundException("No se encontro la mascota con el id : " + id));
+        var animalType = this.animalTypeRepository.findById(pet.getAnimalType().getId()).orElseThrow(() -> new NotFoundException("No se encontro la mascota con el id : " + id));
         pet.setName(petDto.getName());
         pet.setAge(petDto.getAge());
         pet.setAvailability(petDto.getAvailability());

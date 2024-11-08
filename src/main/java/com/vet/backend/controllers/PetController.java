@@ -5,6 +5,7 @@ import com.vet.backend.models.Pet;
 import com.vet.backend.repositories.PetRepository;
 import com.vet.backend.services.AnimalTypeService;
 import com.vet.backend.services.PetService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +15,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/mascotas")
 public class PetController {
-    @Autowired
-    private PetService petService;
+
     @Autowired
     private AnimalTypeService animalTypeService;
+
+    @Autowired
+    private PetService petService;
+
     @PostMapping("")
-    public Pet create(@RequestBody PetDto petDto ){
-        var animalType = this.animalTypeService.findById(petDto.getAnimalTypeId());
+    public Pet create(@Valid @RequestBody PetDto petDto ){
+        System.out.println(petDto);
+        var animalType = animalTypeService.findById(petDto.getAnimalTypeId());
         var pet = new Pet();
         pet.setName(petDto.getName());
         pet.setAvailability(petDto.getAvailability());

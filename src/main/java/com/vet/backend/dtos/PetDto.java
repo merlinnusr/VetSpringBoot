@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class PetDto {
     @NotBlank(message = "Name is required")
-    @Size(max = 50, message = "Name should not exceed 50 characters")
+    @Size(min = 2, max = 50, message = "Name should be between 2 and 50 characters")
     private String name;
     @NotNull(message = "Animal type ID is required")
     @Positive(message = "Animal type ID should be a positive number")

@@ -7,6 +7,7 @@ import com.vet.backend.services.AdoptionService;
 import com.vet.backend.services.AnimalTypeService;
 import com.vet.backend.services.PetService;
 import com.vet.backend.services.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class AdoptionController {
     @Autowired
     private AnimalTypeService animalTypeService;
     @PostMapping
-    public Adoption create(@RequestBody AdoptionDto adoptionDto){
+    public Adoption create(@Valid @RequestBody AdoptionDto adoptionDto){
         System.out.println(adoptionDto);
         var user = userService.find(adoptionDto.getUserId());
         var animalType = animalTypeService.find(adoptionDto.getAnimalTypeId());
