@@ -4,6 +4,7 @@ import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
 import com.vet.backend.services.IAnimalTypeService;
 import com.vet.backend.services.IPetService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class PetController {
 //        pet.setAnimalType(animalType);
         return petService.store(petDto);
     }
-    @GetMapping("")
+    @GetMapping
     public List<Pet> index(){
         return petService.all();
     }

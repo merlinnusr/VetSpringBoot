@@ -6,6 +6,7 @@ import com.vet.backend.models.Adoption;
 import com.vet.backend.models.Pet;
 import com.vet.backend.repositories.AdoptionRepository;
 import com.vet.backend.services.IAdoptionService;
+import com.vet.backend.services.IAnimalTypeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class AdoptionService implements IAdoptionService {
     @Autowired
     private PetService petService;
     @Autowired
-    private AnimalTypeService animalTypeService;
+    private IAnimalTypeService animalTypeService;
 
     public Adoption store(AdoptionDto adoptionDto){
         var user = userService.find(adoptionDto.getUserId());
@@ -58,17 +59,17 @@ public class AdoptionService implements IAdoptionService {
 
     @Override
     public Adoption updateAdoption(Long id, AdoptionDto adoptionDto) {
-       Adoption adoption = this.findAdoptionById(id);
+        Adoption adoption = this.findAdoptionById(id);
 
-       var user = userService.find(adoptionDto.getUserId());
-       Pet pet = this.petService.getPetById(adoptionDto.getPetId());
+        var user = userService.find(adoptionDto.getUserId());
+        Pet pet = this.petService.getPetById(adoptionDto.getPetId());
 
-       adoption.setName(adoptionDto.getName());
-       adoption.setUser(user);
-       //adoption.setAdoptionDate(LocalDate.now());
-       adoption.setPet(pet);
+        adoption.setName(adoptionDto.getName());
+        adoption.setUser(user);
+        //adoption.setAdoptionDate(LocalDate.now());
+        adoption.setPet(pet);
 
-       return adoptionRepository.save(adoption);
+        return adoptionRepository.save(adoption);
     }
 
 }

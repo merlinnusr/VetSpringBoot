@@ -5,7 +5,6 @@ import com.vet.backend.models.Adoption;
 import com.vet.backend.models.Pet;
 import com.vet.backend.services.IAdoptionService;
 import com.vet.backend.services.imp.AdoptionService;
-import com.vet.backend.services.imp.AnimalTypeService;
 import com.vet.backend.services.imp.PetService;
 import com.vet.backend.services.imp.UserService;
 

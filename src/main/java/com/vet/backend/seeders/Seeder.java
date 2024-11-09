@@ -1,7 +1,10 @@
 package com.vet.backend.seeders;
 
+import com.vet.backend.models.AnimalType;
+import com.vet.backend.models.Pet;
 import com.vet.backend.models.User;
 import com.vet.backend.repositories.AnimalTypeRepository;
+import com.vet.backend.repositories.PetRepository;
 import com.vet.backend.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +17,7 @@ public class Seeder {
     @Transactional
     public CommandLineRunner seedDatabase(
             UserRepository userRepository,
+            PetRepository petRepository,
             AnimalTypeRepository animalTypeRepository
     ) {
         return args -> {
@@ -29,12 +33,20 @@ public class Seeder {
                 user1.setPassword(passwordEncoder.encode("password"));
                 userRepository.save(user1);
 
+
+
                 createAndSaveAnimalType("Mammal", animalTypeRepository);
                 createAndSaveAnimalType("Bird", animalTypeRepository);
                 createAndSaveAnimalType("Reptile", animalTypeRepository);
                 createAndSaveAnimalType("Fish", animalTypeRepository);
                 createAndSaveAnimalType("Amphibian", animalTypeRepository);
-
+                Pet pet = new Pet();
+                pet.setAge(1);
+                var animalType = animalTypeRepository.findById(1L).orElseThrow(() -> new RuntimeException("Error"));
+                pet.setAnimalType(animalType);
+                pet.setName("Panchito");
+                pet.setAvailability(true);
+                petRepository.save(pet);
                 System.out.println("Database seeded successfully!");
             } else {
                 System.out.println("Database already contains data. Seeding skipped.");
