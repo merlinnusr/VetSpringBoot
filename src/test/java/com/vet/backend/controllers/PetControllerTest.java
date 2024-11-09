@@ -1,11 +1,9 @@
 package com.vet.backend.controllers;
 
-import com.vet.backend.services.PetService;
-import org.junit.jupiter.api.BeforeEach;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vet.backend.models.Pet;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,9 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -26,6 +23,9 @@ public class PetControllerTest {
     @Autowired
     private MockMvc mockMvc;
     private String petResponseJson;
+    @Autowired
+    private ObjectMapper objectMapper;
+
     String jsonPayload = """
             [
                 {   
@@ -41,6 +41,7 @@ public class PetControllerTest {
             ]
         """;
     @Test
+    @Order(1)
     public void testPetCreate() throws Exception{
         String jsonPayload2 = """
                 {   
@@ -58,13 +59,20 @@ public class PetControllerTest {
                         .content()
                         .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andReturn();
+
         petResponseJson = result.getResponse().getContentAsString();
+
     }
     @Test
+    @Order(2)
     public void testPetShowAll() throws Exception{
+        Pet pet = objectMapper.readValue(petResponseJson, Pet.class);
+
         mockMvc.perform(get("/api/mascotas")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[*].id").value("panchito"));
+                .andExpect(jsonPath("$[*].id").value(pet.getId()))
+                .andExpect(jsonPath("$[*].name").value(pet.getName()));
+
     }
 }

@@ -5,21 +5,18 @@ import com.vet.backend.models.Adoption;
 import com.vet.backend.models.AnimalType;
 import com.vet.backend.models.Pet;
 import com.vet.backend.models.User;
-import com.vet.backend.services.AdoptionService;
-import com.vet.backend.services.AnimalTypeService;
-import com.vet.backend.services.PetService;
-import com.vet.backend.services.UserService;
+
+import com.vet.backend.services.imp.AdoptionService;
+import com.vet.backend.services.imp.AnimalTypeService;
+import com.vet.backend.services.imp.PetService;
+import com.vet.backend.services.imp.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDate;
@@ -29,7 +26,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 public class AdoptionControllerTest {
@@ -39,13 +35,13 @@ public class AdoptionControllerTest {
     private PetService petService;
 
     @Mock
-    private AdoptionService adoptionService;
+    private com.vet.backend.services.imp.AdoptionService adoptionService;
 
     @Mock
-    private UserService userService;
+    private com.vet.backend.services.imp.UserService userService;
 
     @Mock
-    private AnimalTypeService animalTypeService;
+    private com.vet.backend.services.imp.AnimalTypeService animalTypeService;
 
     @InjectMocks
     private AdoptionController adoptionController;
@@ -84,8 +80,8 @@ public class AdoptionControllerTest {
 
         when(userService.find(1L)).thenReturn(user);
         when(animalTypeService.find(1L)).thenReturn(animalType);
-        when(petService.store(any(Pet.class))).thenReturn(pet);
-        when(adoptionService.store(any(Adoption.class))).thenReturn(adoption);
+//        when(petService.store(any(Pet.class))).thenReturn(pet);
+//        when(adoptionService.store(any(Adoption.class))).thenReturn(adoption);
 
 //        // Realizar solicitud de prueba
 //        mockMvc.perform(post("/api/adopciones")
