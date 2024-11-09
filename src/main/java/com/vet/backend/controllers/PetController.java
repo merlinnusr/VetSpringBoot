@@ -2,14 +2,8 @@ package com.vet.backend.controllers;
 
 import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
-<<<<<<< Updated upstream
-import com.vet.backend.repositories.PetRepository;
 import com.vet.backend.services.AnimalTypeService;
-import com.vet.backend.services.PetService;
-=======
-import com.vet.backend.services.IAnimalTypeService;
-import com.vet.backend.services.IPetService;
->>>>>>> Stashed changes
+import com.vet.backend.services.imp.PetService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

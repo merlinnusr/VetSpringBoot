@@ -3,14 +3,10 @@ package com.vet.backend.controllers;
 import com.vet.backend.dtos.LoginDto;
 import com.vet.backend.dtos.UserDto;
 import com.vet.backend.models.User;
-<<<<<<< Updated upstream
 import com.vet.backend.repositories.UserRepository;
-import com.vet.backend.services.UserService;
-=======
 import com.vet.backend.responses.AuthResponse;
-import com.vet.backend.services.imp.UserService;
+import com.vet.backend.services.UserService;
 import jakarta.validation.Valid;
->>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
