@@ -22,5 +22,5 @@ public class AdoptionDto {
     @NotNull(message = "User ID is required")
     @Positive(message = "User ID should be a positive number")
     private Long userId;
-
+    private Long petId;
 }

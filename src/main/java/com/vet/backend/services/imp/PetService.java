@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("petServiceImpl")  // Give a unique name here
+@Service
 public class PetService implements IPetService {
     @Autowired
     private PetRepository petRepository;
