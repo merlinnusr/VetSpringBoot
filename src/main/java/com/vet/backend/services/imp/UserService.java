@@ -24,12 +24,21 @@ public class UserService implements IUserService {
 
     @Override
     public void deleteUser(Long id) {
-
+        User usr = this.find(id);
+        if(usr == null){
+            throw new NotFoundException("No existe ese usuario");
+        }
+        this.userRepository.delete(usr);
     }
 
     @Override
-    public User updateUser(UserDto userDto) {
-        return null;
+    public User updateUser(UserDto userDto, Long id) {
+        var usr = this.find(id);
+        usr.setName(userDto.getName());
+        usr.setPhone(userDto.getPhone());
+        usr.setEmail(userDto.getEmail());
+        usr.setPassword(userDto.getPassword());
+        return this.userRepository.save(usr);
     }
 
 

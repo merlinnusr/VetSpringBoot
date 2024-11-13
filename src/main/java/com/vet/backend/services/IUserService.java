@@ -13,7 +13,7 @@ public interface IUserService {
     //delete user
     public void deleteUser(Long id);
     //update user
-    public User updateUser(UserDto userDto);
+    public User updateUser(UserDto userDto, Long id);
     //get all users
     public List<User> findAllUsers();
 }
