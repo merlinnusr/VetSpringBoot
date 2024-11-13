@@ -4253,3 +4253,188 @@ java.lang.RuntimeException: No se encontro la mascota con el id : 2
 2024-11-12 21:08:56.124  INFO 16368 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-12 21:08:56.128  INFO 16368 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
 2024-11-12 21:08:56.136  INFO 16368 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-11-12 21:13:51.152  INFO ${sys:PID} --- [           main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vet.backend.controllers.AdoptionControllerTest]: AdoptionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-12 21:13:51.296  INFO ${sys:PID} --- [           main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.vet.backend.BackendApplication for test class com.vet.backend.controllers.AdoptionControllerTest
+2024-11-12 21:13:51.441  INFO ${sys:PID} --- [           main] org.springframework.boot.devtools.restart.RestartApplicationListener : Restart disabled due to context in which it is running
+2024-11-12 21:13:51.645  INFO 984 --- [kground-preinit] org.hibernate.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 21:13:52.643  INFO 984 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-12 21:13:52.704  INFO 984 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+2024-11-12 21:13:53.357  INFO 984 --- [           main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-12 21:13:53.423  INFO 984 --- [           main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-12 21:13:53.459  INFO 984 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-11-12 21:13:53.764  INFO 984 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-12 21:13:53.797  INFO 984 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-11-12 21:13:53.975  INFO 984 --- [           main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-12 21:13:53.977  INFO 984 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-11-12 21:13:54.000  WARN 984 --- [           main] org.hibernate.orm.deprecation : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-12 21:13:54.864  INFO 984 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-12 21:13:54.914  INFO 984 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:13:55.377  INFO 984 --- [           main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-12 21:13:55.518  WARN 984 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-12 21:13:56.650  INFO 984 --- [           main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-12 21:13:58.618  INFO 984 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:13:58.618  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:13:58.619  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:13:58.829  INFO 984 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:13:58.829  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:13:58.829  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:13:58.859  INFO 984 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:13:58.859  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:13:58.859  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:13:58.894  INFO 984 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:13:58.894  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:13:58.894  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:13:58.955  INFO 984 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:13:58.955  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:13:58.956  INFO 984 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:13:58.976  INFO 984 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:13:58.983  INFO 984 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-11-12 21:13:58.988  INFO 984 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-11-12 21:14:38.280  INFO ${sys:PID} --- [           main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vet.backend.controllers.AdoptionControllerTest]: AdoptionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-12 21:14:38.423  INFO ${sys:PID} --- [           main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.vet.backend.BackendApplication for test class com.vet.backend.controllers.AdoptionControllerTest
+2024-11-12 21:14:38.568  INFO ${sys:PID} --- [           main] org.springframework.boot.devtools.restart.RestartApplicationListener : Restart disabled due to context in which it is running
+2024-11-12 21:14:38.769  INFO 17284 --- [kground-preinit] org.hibernate.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 21:14:39.773  INFO 17284 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-12 21:14:39.837  INFO 17284 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+2024-11-12 21:14:40.496  INFO 17284 --- [           main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-12 21:14:40.557  INFO 17284 --- [           main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-12 21:14:40.592  INFO 17284 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-11-12 21:14:40.909  INFO 17284 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-12 21:14:40.945  INFO 17284 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-11-12 21:14:41.138  INFO 17284 --- [           main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-12 21:14:41.139  INFO 17284 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-11-12 21:14:41.164  WARN 17284 --- [           main] org.hibernate.orm.deprecation : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-12 21:14:42.066  INFO 17284 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-12 21:14:42.115  INFO 17284 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:14:42.592  INFO 17284 --- [           main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-12 21:14:42.738  WARN 17284 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-12 21:14:43.866  INFO 17284 --- [           main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-12 21:14:45.792  INFO 17284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:14:45.793  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:14:45.794  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 1 ms
+2024-11-12 21:14:46.003  INFO 17284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:14:46.004  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:14:46.004  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:14:46.030  INFO 17284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:14:46.030  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:14:46.030  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:14:46.071  INFO 17284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:14:46.071  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:14:46.071  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:14:46.125  INFO 17284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:14:46.125  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:14:46.125  INFO 17284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:14:46.145  INFO 17284 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:14:46.152  INFO 17284 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-11-12 21:14:46.156  INFO 17284 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-11-12 21:15:28.603  INFO ${sys:PID} --- [           main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vet.backend.controllers.AdoptionControllerTest]: AdoptionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-12 21:15:28.746  INFO ${sys:PID} --- [           main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.vet.backend.BackendApplication for test class com.vet.backend.controllers.AdoptionControllerTest
+2024-11-12 21:15:28.891  INFO ${sys:PID} --- [           main] org.springframework.boot.devtools.restart.RestartApplicationListener : Restart disabled due to context in which it is running
+2024-11-12 21:15:29.086  INFO 6616 --- [kground-preinit] org.hibernate.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 21:15:30.098  INFO 6616 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-12 21:15:30.155  INFO 6616 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2024-11-12 21:15:30.823  INFO 6616 --- [           main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-12 21:15:30.892  INFO 6616 --- [           main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-12 21:15:30.927  INFO 6616 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-11-12 21:15:31.241  INFO 6616 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-12 21:15:31.288  INFO 6616 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-11-12 21:15:31.468  INFO 6616 --- [           main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-12 21:15:31.470  INFO 6616 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-11-12 21:15:31.491  WARN 6616 --- [           main] org.hibernate.orm.deprecation : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-12 21:15:32.359  INFO 6616 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-12 21:15:32.408  INFO 6616 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:15:32.889  INFO 6616 --- [           main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-12 21:15:33.018  WARN 6616 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-12 21:15:34.138  INFO 6616 --- [           main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-12 21:15:36.057  INFO 6616 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:36.058  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:36.059  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:36.265  INFO 6616 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:36.265  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:36.265  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:36.293  INFO 6616 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:36.293  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:36.293  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:36.327  INFO 6616 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:36.328  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:36.328  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:36.385  INFO 6616 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:36.385  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:36.385  INFO 6616 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:36.404  INFO 6616 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:15:36.411  INFO 6616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-11-12 21:15:36.416  INFO 6616 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-11-12 21:15:43.789  INFO ${sys:PID} --- [           main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vet.backend.controllers.AdoptionControllerTest]: AdoptionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-12 21:15:43.929  INFO ${sys:PID} --- [           main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.vet.backend.BackendApplication for test class com.vet.backend.controllers.AdoptionControllerTest
+2024-11-12 21:15:44.080  INFO ${sys:PID} --- [           main] org.springframework.boot.devtools.restart.RestartApplicationListener : Restart disabled due to context in which it is running
+2024-11-12 21:15:44.282  INFO 5284 --- [kground-preinit] org.hibernate.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 21:15:45.283  INFO 5284 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-12 21:15:45.344  INFO 5284 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2024-11-12 21:15:46.005  INFO 5284 --- [           main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-12 21:15:46.066  INFO 5284 --- [           main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-12 21:15:46.102  INFO 5284 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-11-12 21:15:46.419  INFO 5284 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-12 21:15:46.452  INFO 5284 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-11-12 21:15:46.640  INFO 5284 --- [           main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-12 21:15:46.641  INFO 5284 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-11-12 21:15:46.667  WARN 5284 --- [           main] org.hibernate.orm.deprecation : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-12 21:15:47.536  INFO 5284 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-12 21:15:47.586  INFO 5284 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:15:48.080  INFO 5284 --- [           main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-12 21:15:48.207  WARN 5284 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-12 21:15:49.342  INFO 5284 --- [           main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-12 21:15:51.276  INFO 5284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:51.277  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:51.278  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 1 ms
+2024-11-12 21:15:51.486  INFO 5284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:51.486  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:51.486  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:51.513  INFO 5284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:51.513  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:51.514  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:51.548  INFO 5284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:51.548  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:51.548  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:51.601  INFO 5284 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:15:51.601  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:15:51.601  INFO 5284 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:15:51.621  INFO 5284 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:15:51.628  INFO 5284 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-11-12 21:15:51.631  INFO 5284 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2024-11-12 21:15:56.802  INFO ${sys:PID} --- [           main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vet.backend.controllers.AdoptionControllerTest]: AdoptionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-12 21:15:56.943  INFO ${sys:PID} --- [           main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.vet.backend.BackendApplication for test class com.vet.backend.controllers.AdoptionControllerTest
+2024-11-12 21:15:57.088  INFO ${sys:PID} --- [           main] org.springframework.boot.devtools.restart.RestartApplicationListener : Restart disabled due to context in which it is running
+2024-11-12 21:15:57.282  INFO 16828 --- [kground-preinit] org.hibernate.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 21:15:58.289  INFO 16828 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-12 21:15:58.346  INFO 16828 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2024-11-12 21:15:58.999  INFO 16828 --- [           main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-12 21:15:59.060  INFO 16828 --- [           main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-12 21:15:59.096  INFO 16828 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+2024-11-12 21:15:59.399  INFO 16828 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-12 21:15:59.433  INFO 16828 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2024-11-12 21:15:59.610  INFO 16828 --- [           main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-12 21:15:59.611  INFO 16828 --- [           main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2024-11-12 21:15:59.634  WARN 16828 --- [           main] org.hibernate.orm.deprecation : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-12 21:16:00.502  INFO 16828 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-12 21:16:00.551  INFO 16828 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:16:01.019  INFO 16828 --- [           main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-12 21:16:01.165  WARN 16828 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-12 21:16:02.292  INFO 16828 --- [           main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-12 21:16:04.223  INFO 16828 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:16:04.224  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:16:04.225  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:16:04.434  INFO 16828 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:16:04.434  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:16:04.435  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:16:04.461  INFO 16828 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:16:04.461  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:16:04.461  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:16:04.497  INFO 16828 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:16:04.497  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:16:04.497  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:16:04.552  INFO 16828 --- [           main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12 21:16:04.552  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+2024-11-12 21:16:04.552  INFO 16828 --- [           main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+2024-11-12 21:16:04.572  INFO 16828 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-12 21:16:04.578  INFO 16828 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2024-11-12 21:16:04.582  INFO 16828 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.

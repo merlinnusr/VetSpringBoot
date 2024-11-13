@@ -62,9 +62,6 @@ public class AdoptionControllerTest {
         // Preparar DTO de adopción
         AdoptionDto adoptionDto = new AdoptionDto();
         adoptionDto.setUserId(1L);
-        adoptionDto.setAnimalTypeId(1L);
-        adoptionDto.setName("Firulais");
-        adoptionDto.setAge(2);
 
         // Mockear los servicios y sus respuestas
         User user = new User();
@@ -79,7 +76,6 @@ public class AdoptionControllerTest {
         pet.setAnimalType(animalType);
 
         Adoption adoption = new Adoption();
-        adoption.setName("Firulais");
         adoption.setUser(user);
         adoption.setAdoptionDate(LocalDate.now());
         adoption.setPet(pet);
@@ -117,7 +113,6 @@ public class AdoptionControllerTest {
 
         Adoption adoption = new Adoption();
         adoption.setId(1L);
-        adoption.setName("Adopción 1");
         adoption.setUser(user);
         adoption.setPet(pet);
         adoption.setAdoptionDate(LocalDate.now());
@@ -128,9 +123,7 @@ public class AdoptionControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.name").value("Adopción 1"))
-                .andExpect(jsonPath("$.user.id").value(1))
-                .andExpect(jsonPath("$.pet.name").value("Firulais"));
+                .andExpect(jsonPath("$.user.id").value(1));
     }
 
     @Test
@@ -150,14 +143,12 @@ public class AdoptionControllerTest {
 
         Adoption adoption1 = new Adoption();
         adoption1.setId(1L);
-        adoption1.setName("Adopción 1");
         adoption1.setUser(user1);
         adoption1.setPet(pet1);
         adoption1.setAdoptionDate(LocalDate.now());
 
         Adoption adoption2 = new Adoption();
         adoption2.setId(2L);
-        adoption2.setName("Adopción 2");
         adoption2.setUser(user2);
         adoption2.setPet(pet2);
         adoption2.setAdoptionDate(LocalDate.now());
@@ -170,23 +161,20 @@ public class AdoptionControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(1))
-                .andExpect(jsonPath("$[0].name").value("Adopción 1"))
-                .andExpect(jsonPath("$[1].id").value(2))
-                .andExpect(jsonPath("$[1].name").value("Adopción 2"));
+                .andExpect(jsonPath("$[1].id").value(2));
     }
 
     @Test
     void deleteAdoptionByIdTest() throws Exception {
         mockMvc.perform(delete("/api/adopciones/eliminar/{id}", 1)
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isNoContent());
     }
 
     @Test
     void editAdoptionTest() throws Exception {
         AdoptionDto adoptionDto = new AdoptionDto();
         adoptionDto.setUserId(1L);
-        adoptionDto.setName("Adopción Editada");
         adoptionDto.setPetId(2L);
 
         User user = new User();
@@ -198,7 +186,6 @@ public class AdoptionControllerTest {
 
         Adoption adoption = new Adoption();
         adoption.setId(1L);
-        adoption.setName("Adopción Editada");
         adoption.setUser(user);
         adoption.setPet(pet);
         adoption.setAdoptionDate(LocalDate.now());
@@ -216,7 +203,6 @@ public class AdoptionControllerTest {
                                 """))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.name").value("Adopción Editada"))
                 .andExpect(jsonPath("$.pet.name").value("Lassie"))
                 .andExpect(jsonPath("$.user.id").value(1));
     }
