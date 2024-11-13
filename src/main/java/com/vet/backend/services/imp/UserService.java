@@ -3,6 +3,7 @@ package com.vet.backend.services.imp;
 import com.vet.backend.dtos.UserDto;
 import com.vet.backend.exceptions.NotFoundException;
 import com.vet.backend.models.User;
+import com.vet.backend.repositories.RoleRepository;
 import com.vet.backend.repositories.UserRepository;
 import com.vet.backend.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import java.util.List;
 public class UserService implements IUserService {
     @Autowired
     public UserRepository userRepository;
+    @Autowired
+    public RoleRepository roleRepository;
     public User find(Long id){
         return this.userRepository.findById(id).orElseThrow(() -> new NotFoundException("No existe ese usuario"));
     }
@@ -41,7 +44,8 @@ public class UserService implements IUserService {
         user.setName(userDto.getName());
         user.setPhone(userDto.getPhone());
         user.setEmail(userDto.getEmail());
-        user.setRole(userDto.getRole());
+        var role = roleRepository.findByName("USER").orElseThrow(() -> new RuntimeException("No se encontro el rol"));
+        user.setRole(role);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         return user;

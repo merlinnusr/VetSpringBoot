@@ -5,6 +5,8 @@ import com.vet.backend.dtos.UserDto;
 import com.vet.backend.models.User;
 import com.vet.backend.responses.AuthResponse;
 import com.vet.backend.services.imp.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,6 +21,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 
 @RestController
 @RequestMapping("/api/usuarios")
+@Tag(name = "Manejo de usuarios", description = "Operaciones de registro y login de usuarios")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -27,6 +30,7 @@ public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
     @PostMapping
+    @Operation(summary = "Login")
     public AuthResponse login(@Valid @RequestBody LoginDto loginDto){
         try {
             Authentication authentication = authenticationManager.authenticate(
@@ -46,7 +50,8 @@ public class UserController {
         }
     }
     @PostMapping("/register")
-    public User register(UserDto userDto){
+    @Operation(summary = "Register")
+    public User register(@Valid @RequestBody UserDto userDto){
         return this.userService.save(userDto);
     }
 

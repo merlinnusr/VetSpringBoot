@@ -28,16 +28,14 @@ public class AdoptionService implements IAdoptionService {
 
     public Adoption store(AdoptionDto adoptionDto){
         var user = userService.find(adoptionDto.getUserId());
-        Pet pet = this.petService.getPetById(adoptionDto.getPetId());
+        var pet = petService.getPetById(adoptionDto.getPetId());
 
         Adoption adoption = new Adoption();
-        adoption.setName(adoptionDto.getName());
         adoption.setUser(user);
-        adoption.setAdoptionDate(LocalDate.now());
         adoption.setPet(pet);
+        adoption.setAdoptionDate(LocalDate.now());
 
         log.warn("Warning");
-        // this.petService.store(pet);
         return this.adoptionRepository.save(adoption);
     }
 
@@ -64,9 +62,8 @@ public class AdoptionService implements IAdoptionService {
         var user = userService.find(adoptionDto.getUserId());
         Pet pet = this.petService.getPetById(adoptionDto.getPetId());
 
-        adoption.setName(adoptionDto.getName());
         adoption.setUser(user);
-        //adoption.setAdoptionDate(LocalDate.now());
+        adoption.setAdoptionDate(adoption.getAdoptionDate());
         adoption.setPet(pet);
 
         return adoptionRepository.save(adoption);

@@ -8,6 +8,7 @@ import com.vet.backend.services.imp.AdoptionService;
 import com.vet.backend.services.imp.PetService;
 import com.vet.backend.services.imp.UserService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api/adopciones")
+@Tag(name = "Crud de manejo de adopciones", description = "Manejo de adopciones")
 public class AdoptionController {
     @Autowired
     private IAdoptionService adoptionService;
@@ -42,7 +44,7 @@ public class AdoptionController {
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> deleteAdoptionById(@PathVariable("id") Long id){
         this.adoptionService.deleteAdoption(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/editar/{id}")

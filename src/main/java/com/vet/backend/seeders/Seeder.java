@@ -2,9 +2,11 @@ package com.vet.backend.seeders;
 
 import com.vet.backend.models.AnimalType;
 import com.vet.backend.models.Pet;
+import com.vet.backend.models.Role;
 import com.vet.backend.models.User;
 import com.vet.backend.repositories.AnimalTypeRepository;
 import com.vet.backend.repositories.PetRepository;
+import com.vet.backend.repositories.RoleRepository;
 import com.vet.backend.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
@@ -18,7 +20,8 @@ public class Seeder {
     public CommandLineRunner seedDatabase(
             UserRepository userRepository,
             PetRepository petRepository,
-            AnimalTypeRepository animalTypeRepository
+            AnimalTypeRepository animalTypeRepository,
+            RoleRepository roleRepository
     ) {
         return args -> {
             // Check if data already exists to prevent duplicate seeding
@@ -47,6 +50,9 @@ public class Seeder {
                 pet.setName("Panchito");
                 pet.setAvailability(true);
                 petRepository.save(pet);
+                Role role = new Role();
+                role.setName("ROLE_USER");
+                roleRepository.save(role);
                 System.out.println("Database seeded successfully!");
             } else {
                 System.out.println("Database already contains data. Seeding skipped.");

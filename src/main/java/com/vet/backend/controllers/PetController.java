@@ -4,6 +4,7 @@ import com.vet.backend.dtos.PetDto;
 import com.vet.backend.models.Pet;
 import com.vet.backend.services.IAnimalTypeService;
 import com.vet.backend.services.IPetService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/mascotas")
+@Tag(name = "Manejo de mascotas", description = "Crud para manejo de mascotas")
 public class PetController {
     @Autowired
     private IPetService petService;
@@ -31,6 +33,10 @@ public class PetController {
     @GetMapping
     public List<Pet> index(){
         return petService.all();
+    }
+    @GetMapping("/{id}")
+    public Pet show(@PathVariable Long id){
+        return petService.getPetById(id);
     }
     @PutMapping("/{id}")
     public Pet update(@RequestBody PetDto petDto, @PathVariable Long id){

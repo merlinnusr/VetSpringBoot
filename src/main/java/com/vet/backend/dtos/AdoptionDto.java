@@ -5,22 +5,25 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Data
 public class AdoptionDto {
-    @NotBlank(message = "Name is required")
-    @Size(min = 2 , max = 40, message = "Name should not exceed 50 characters")
-    private String name;
-    @NotNull(message = "Animal type ID is required")
-    @Positive(message = "Animal type ID should be a positive number")
-    private Long animalTypeId;
-    @NotNull(message = "Age is required")
-    @Min(value = 0, message = "Age should be at least 0")
-    @Max(value = 99, message = "Age should not exceed 50")
-    private Integer age;
     @NotNull(message = "User ID is required")
     @Positive(message = "User ID should be a positive number")
     private Long userId;
+    @NotNull(message = "Pet ID is required")
+    @Positive(message = "Pet ID should be a positive number")
     private Long petId;
+    @Pattern(
+            regexp = "\\d{4}-\\d{2}-\\d{2}",
+            message = "Date must be in yyyy-MM-dd format"
+    )
+    private String adoptionDate;
+    @PastOrPresent(message = "Adoption date cannot be in the future")
+    public LocalDate getAdoptionDate() {
+        return adoptionDate == null ? null : LocalDate.parse(adoptionDate);
+    }
 }
