@@ -59,7 +59,7 @@ public class UserControllerTest {
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
                 .thenReturn(authentication);
 
-        mockMvc.perform(post("/api/usuarios")
+        mockMvc.perform(post("/api/usuarios/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                 {
@@ -78,7 +78,7 @@ public class UserControllerTest {
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
                 .thenThrow(new RuntimeException("Invalid email or password"));
 
-        mockMvc.perform(post("/api/usuarios")
+        mockMvc.perform(post("/api/usuarios/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                 {
@@ -108,7 +108,9 @@ public class UserControllerTest {
                         .content("""
             {
                 "email": "newuser@example.com",
-                "password": "newpassword"
+                "password": "newpassword",
+                "phone": "3313147849",
+                "name": "Jorge Eduardo"
             }
             """))
                 .andExpect(status().isOk())
