@@ -45,6 +45,7 @@ public class UserController {
             throw new RuntimeException("Invalid email or password");
         }
     }
+    @PostMapping("/register")
     public User register(UserDto userDto){
         return this.userService.save(userDto);
     }
