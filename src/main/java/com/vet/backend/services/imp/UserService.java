@@ -44,7 +44,7 @@ public class UserService implements IUserService {
         user.setName(userDto.getName());
         user.setPhone(userDto.getPhone());
         user.setEmail(userDto.getEmail());
-        var role = roleRepository.findByName("USER").orElseThrow(() -> new RuntimeException("No se encontro el rol"));
+        var role = roleRepository.findByName("ROLE_USER").orElseThrow(() -> new RuntimeException("No se encontro el rol"));
         user.setRole(role);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));

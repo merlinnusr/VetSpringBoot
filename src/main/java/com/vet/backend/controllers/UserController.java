@@ -8,6 +8,8 @@ import com.vet.backend.services.imp.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,13 +25,14 @@ import org.springframework.security.authentication.AuthenticationManager;
 @RequestMapping("/api/usuarios")
 @Tag(name = "Manejo de usuarios", description = "Operaciones de registro y login de usuarios")
 public class UserController {
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
     private AuthenticationManager authenticationManager;
-    @PostMapping
+    @PostMapping("/login")
     @Operation(summary = "Login")
     public AuthResponse login(@Valid @RequestBody LoginDto loginDto){
         try {
@@ -46,6 +49,7 @@ public class UserController {
                     "ROLE_USER"
             );
         } catch (AuthenticationException e) {
+            log.error("e: ", e);
             throw new RuntimeException("Invalid email or password");
         }
     }
