@@ -1,0 +1,52 @@
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'adoptions'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db2:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.1-fpm-alpine
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 8081:80
+
+  spring-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - JAVA_OPTS=-Xmx512m -Xms256m
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/adoptions?autoReconnect=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=password
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    restart: unless-stopped
+    depends_on:
+      - db
+    volumes:
+      - ./logs:/app/logs
+# Names our volume
+volumes:
+  my-db2:
