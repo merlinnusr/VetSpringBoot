@@ -11,15 +11,15 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -54,10 +54,27 @@ public class UserController {
         }
     }
     @PostMapping("/register")
-    @Operation(summary = "Register")
     public User register(@Valid @RequestBody UserDto userDto){
         return this.userService.save(userDto);
     }
+    @GetMapping("/")
+    public List<User> index(){
+        return this.userService.findAllUsers();
+    }
+    @GetMapping("/{id}")
+    public User show(@PathVariable Long id){
+        return this.userService.find(id);
+    }
+    @PutMapping("/{id}")
+    public User update(@PathVariable Long id, @Valid @RequestBody UserDto userDto){
+        return this.userService.updateUser(userDto, id);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> register(@PathVariable Long id){
+        this.userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
+
 
     
 

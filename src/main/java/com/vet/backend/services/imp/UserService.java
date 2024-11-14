@@ -57,6 +57,7 @@ public class UserService implements IUserService {
         user.setRole(role);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        userRepository.save(user);
         return user;
     }
 }

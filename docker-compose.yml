@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql:5.7
+    image: mysql:8
     restart: always
     environment:
       MYSQL_DATABASE: 'adoptions'
@@ -12,7 +12,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - my-db2:/var/lib/mysql
+      - my-db3:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.2.1-fpm-alpine
@@ -49,4 +49,4 @@ services:
       - ./logs:/app/logs
 # Names our volume
 volumes:
-  my-db2:
+  my-db3:
